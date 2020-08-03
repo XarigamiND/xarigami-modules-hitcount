@@ -1,0 +1,36 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+        <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="admin-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <h1><xar:mlstring>Delete hit counts</xar:mlstring></h1>
+        <div class="xar-mod-content">
+            <form name="post" id="post" action="&xar-modurl-hitcount-admin-delete;" method="post" enctype="application/x-www-form-urlencoded">
+            <fieldset>
+                <legend>
+                    <xar:mlstring>Confirm Hitcount Deletion</xar:mlstring>
+                </legend>
+                <div class="xar-form-input-wrapper">
+                    <xar:if condition="empty($modname)">
+                        <xar:mlstring>Are you sure you want to delete all hitcounts ?</xar:mlstring>
+                    <xar:elseif condition="empty($itemid)"/>
+                        <xar:ml><xar:mlstring>Are you sure you want to delete all hitcounts for module <b>#(1)</b> ?</xar:mlstring><xar:mlvar>#$modname#</xar:mlvar></xar:ml>
+                    <xar:else/>
+                        <xar:ml><xar:mlstring>Are you sure you want to delete all hitcounts for module <b>#(1)</b> item <b>#(2)</b> ?</xar:mlstring><xar:mlvar>#$modname#</xar:mlvar><xar:mlvar>#$itemid#</xar:mlvar></xar:ml>
+                    </xar:if>
+                 </div>
+            </fieldset>
+            <div class="xar-form-footer">
+               <input type="hidden" name="authid" id="authid" value="#$authid#" />
+               <input type="hidden" name="modid" id="modid" value="#$modid#" />
+               <input type="hidden" name="itemtype" id="itemtype" value="#$itemtype#" />
+                <input type="hidden" name="itemid" id="itemid" value="#$itemid#" />
+                <input type="submit" name="confirm" id="confirm" value="#xarML('Confirm')#" />
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

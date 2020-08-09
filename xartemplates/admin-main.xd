@@ -39,6 +39,11 @@
             <p>
                     <xar:mlstring>The hitcount must be hooked into the items that you want to count up.</xar:mlstring>
             </p>
+            <h3>Further information</h3>
+            <ul>
+                <li><xar:mlstring>Hitcount Extension page</xar:mlstring> <xar:mlstring>(there is no project page yet)</xar:mlstring></li>
+                <li><a href="http://xarigami.org/contrails/displayproject/xhit"><xar:mlstring>Xarigami Hitcount issue tracker</xar:mlstring></a></li>
+            </ul>
         </div>
     </div>
 </div>

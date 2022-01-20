@@ -72,7 +72,7 @@ function hitcount_userapi_get($args)
               AND xar_itemid = ?";
     $bindvars = array((int)$modid, (int)$itemtype, (int)$objectid);
     $result = $dbconn->Execute($query,$bindvars);
-    if (!$result) return;
+    if (!$result || !$result->fields) return;
 
     $hits = $result->fields[0];
     $result->close();
